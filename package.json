@@ -1,0 +1,27 @@
+{
+  "name": "hocky",
+  "version": "0.0.1",
+  "description": "A higher-order component library using generators.",
+  "main": "index.js",
+  "repository": "git@github.com:philipnilsson/react-hockey.git",
+  "author": "Philip Nilsson <pnilsson@seatgeek.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "./packages/plugin",
+    "./packages/hockey"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-transform-do-expressions": "^6.22.0",
+    "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "babel-core": "7.0.0-bridge.0"
+  }
+}
