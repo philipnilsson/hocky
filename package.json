@@ -9,7 +9,8 @@
   "private": true,
   "workspaces": [
     "./packages/plugin",
-    "./packages/hockey"
+    "./packages/hocky",
+    "./packages/example"
   ],
   "scripts": {
     "test": "jest"

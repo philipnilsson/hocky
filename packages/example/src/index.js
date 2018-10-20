@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import hocky, { pure, echo, toggle, load, delay, debounce } from './hocky';
+import hocky, { pure, echo, toggle, load, delay, debounce } from 'hocky';
 
 const Test = hocky(function*() {
 

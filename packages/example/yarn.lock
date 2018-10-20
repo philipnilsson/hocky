@@ -2072,6 +2072,10 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
+hocky@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/hocky/-/hocky-0.0.1.tgz#fd3e59d13a6b529d7b3a674e9537ed190095b2b5"
+
 hpack.js@^2.1.6:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/hpack.js/-/hpack.js-2.1.6.tgz#87774c0949e513f42e84575b3c45681fade2a0b2"

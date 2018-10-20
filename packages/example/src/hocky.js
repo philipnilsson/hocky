@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import debounceFn from 'lodash/debounce';
 import shallowCompare from 'react-addons-shallow-compare';
 
-
-export default f => () => f().run();
+export default function hocky(f) {
+  return () => f().run();
+}
 
 export class HOC {
   

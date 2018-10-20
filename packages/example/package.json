@@ -1,5 +1,5 @@
 {
-  "name": "hocky-test",
+  "name": "hocky-example",
   "version": "0.0.1",
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -14,6 +14,7 @@
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-do-expressions": "^7.0.0",
+    "hocky": "^0.0.1",
     "react": "^16.5.2",
     "react-addons-shallow-compare": "^15.6.2",
     "react-dom": "^16.5.2"
