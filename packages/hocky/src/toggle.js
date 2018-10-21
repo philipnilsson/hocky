@@ -15,9 +15,10 @@ class Toggle extends React.Component {
   }
   
   render() {
-    return this.props.children({
-      checked: this.state.checked,
-      bind: { ...this.bind, checked: this.state.checked }
+    const { props: { children }, state: { checked } = this;
+    return children({
+      checked,
+      bind: { ...this.bind, checked }
     });
   }
 }

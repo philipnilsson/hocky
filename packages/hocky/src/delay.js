@@ -15,10 +15,6 @@ class Delay extends React.Component {
     ];
   }
   
-  componentWillMount() {
-    this.setDelay(this.props.delay, this.props.value);
-  }
-  
   componentWillReceiveProps({ value, delay }) {
     this.setDelay(delay, value);
   }
