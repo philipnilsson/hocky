@@ -8,16 +8,17 @@ class Debounce extends React.Component {
   }
 
   update = debounceFn(() => {
-    this.setState({ value: this.props.value });
-    this.forceUpdate();
-  }, this.props.debounce);
+    !this.unmounted && this.setState({ value: this.props.value });
+  }, /* TODO: Allow updating this */ this.props.debounce);
   
   componentWillReceiveProps() {
     this.update();
   }
   
-  shouldComponentUpdate(newProps) {
-    return this.props.children !== newProps.children;
+  componentWillUmount() {
+    // Find a way to clear the lodash debounce timer
+    // or use a different function
+    this.unmounted = true;
   }
   
   render() {
