@@ -7,8 +7,24 @@ class Delay extends React.Component {
     value: this.props.value
   }
   
-  componentWillReceiveProps({ value }) {
-    setTimeout(() => this.setState({ value }), this.props.delay);
+  timers = [];
+  
+  setDelay(dt, value) {
+    this.timers.push[
+      setTimeout(() => this.setState({ value }), dt)
+    ];
+  }
+  
+  componentWillMount() {
+    this.setDelay(this.props.delay, this.props.value);
+  }
+  
+  componentWillReceiveProps({ value, delay }) {
+    this.setDelay(delay, value);
+  }
+  
+  componentWillUnmount() {
+    this.timers.forEach(clearTimeout);
   }
   
   render() {
