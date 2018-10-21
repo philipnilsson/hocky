@@ -35,9 +35,7 @@ const Test = hocky(function*() {
             You are {!awesome.checked && <b>not</b>} awesome
         </span>
         <hr/>
-        <div>
-            {links}
-        </div>
+        {links}
     </div>
   );
 });
