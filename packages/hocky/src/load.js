@@ -8,8 +8,7 @@ const encodeUrl = ({ url, query }) => {
   ).join('&');
 }
 
-class Load extends React.Component {
-  
+class Load extends React.PureComponent {
   state = {
     loading: true,
     result: null
@@ -27,12 +26,6 @@ class Load extends React.Component {
 
   componentWillUnmount() {
     this.current = null;
-  }
-  
-  shouldComponentUpdate(props, state) {
-    return this.state.loading !== state.loading ||
-           this.state.result !== state.result ||
-           this.props.children !== props.children;
   }
   
   fetch(props) {

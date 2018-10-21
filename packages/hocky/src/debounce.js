@@ -2,13 +2,15 @@ import React from 'react';
 import HOC from './hoc';
 import debounceFn from 'lodash/debounce';
 
-class Debounce extends React.Component {
+class Debounce extends React.PureComponent {
   state = {
     value: this.props.value
   }
 
   update = debounceFn(() => {
-    !this.unmounted && this.setState({ value: this.props.value });
+    if (!this.unmounted && this.state.value !== this.props.value) {
+      this.setState({ value: this.props.value });
+    }
   }, /* TODO: Allow updating this */ this.props.debounce);
   
   componentWillReceiveProps() {

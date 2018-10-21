@@ -1,8 +1,7 @@
 import React from 'react';
 import HOC from './hoc';
 
-class Window extends React.Component {
-
+class Window extends React.PureComponent {
   state = {
     values: [this.props.value]
   }

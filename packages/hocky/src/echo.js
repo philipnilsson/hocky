@@ -1,7 +1,7 @@
 import React from 'react';
 import HOC from './hoc';
 
-class Echo extends React.Component {
+class Echo extends React.PureComponent {
   state = {
     value: this.props.value
   }

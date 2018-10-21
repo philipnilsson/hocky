@@ -3,8 +3,7 @@ import HOC from './hoc';
 
 const now = () => new Date().getTime();
 
-class Interval extends React.Component {
-
+class Interval extends React.PureComponent {
   timestamp = now();
   
   state = { count: 0 }

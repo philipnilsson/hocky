@@ -1,7 +1,7 @@
 import React from 'react';
 import HOC from './hoc';
 
-class Toggle extends React.Component {
+class Toggle extends React.PureComponent {
   state = {
     checked: this.props.checked
   }

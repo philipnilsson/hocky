@@ -1,11 +1,14 @@
 import React from 'react';
 import HOC from './hoc';
 
-class Delay extends React.Component {
+const SHOW_IMMEDIATE = {};
 
+class Delay extends React.PureComponent {
   state = {
-    value: this.props.value
-  }
+    value: this.props.initial === SHOW_IMMEDIATE
+         ? this.props.value
+         : this.props.initial
+  };
   
   timers = [];
   
@@ -15,8 +18,16 @@ class Delay extends React.Component {
     ];
   }
   
-  componentWillReceiveProps({ value, delay }) {
-    this.setDelay(delay, value);
+  componentDidMount() {
+    if (this.props.initial !== SHOW_IMMEDIATE) {
+      this.setDelay(this.props.dt, this.props.value);
+    }
+  }
+  
+  componentWillReceiveProps({ value, dt }) {
+    if (value !== this.props.value) {
+      this.setDelay(dt, value);
+    }
   }
   
   componentWillUnmount() {
@@ -28,9 +39,9 @@ class Delay extends React.Component {
   }
 }
 
-export default function delay(value, dt) {
+export default function delay(value, dt, initial = SHOW_IMMEDIATE) {
   return new HOC(
-    consumer => <Delay delay={dt} value={value}>{consumer}</Delay>
+    consumer => <Delay dt={dt} value={value} initial={initial}>{consumer}</Delay>
   );
 }
 
