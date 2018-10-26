@@ -10,6 +10,10 @@ export { default as interval } from './interval';
 export { default as filter } from './filter';
 export { default as window } from './window';
 export { default as timeWindow } from './timeWindow';
+export { default as localState } from './local-state';
+export { default as integral } from './integral';
+export { default as select } from './select';
+export { max, min } from './foldIdempotent';                                            
 
 export default function hocky(f) {
   return () => f().run();

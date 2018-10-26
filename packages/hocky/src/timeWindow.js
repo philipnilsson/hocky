@@ -7,12 +7,12 @@ class TimeWindow extends React.PureComponent {
   }
   
   lastValue = {};
-  
+  timers = []
   queue(window) {
-    setTimeout(
+    this.timers.push(setTimeout(
       () => this.setState({ values: this.state.values.slice(0, -1) }),
       window
-    )      
+    ))      
   }
   
   componentDidMount() {
@@ -27,6 +27,10 @@ class TimeWindow extends React.PureComponent {
       });
       this.queue(timeWindow)
     }
+  }
+  
+  componentWillUnmount() {
+    this.timers.forEach(clearTimeout);
   }
   
   render() {
